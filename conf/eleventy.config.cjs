@@ -6,7 +6,7 @@ const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const eleventyImageTransformPlugin = require("@11ty/eleventy-img");
 
-import pluginFilters from "'__DATA_DIR__/src/_config/filters.js";
+import pluginFilters from "'__DATA_DIR__/blog/src/_config/filters.js";
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function(eleventyConfig) {
@@ -22,16 +22,16 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy({
 			"__DATA_DIR__/public/": "/"
 		});
-	eleventyConfig.addPassthroughCopy("__DATA_DIR__/src/feed/pretty-atom-feed.xsl");
-  eleventyConfig.addPassthroughCopy('__DATA_DIR__/src/css/style.css');
-  eleventyConfig.addWatchTarget('__DATA_DIR__/src/css/style.css');
-  eleventyConfig.addPassthroughCopy('__DATA_DIR__/src/assets');
+	eleventyConfig.addPassthroughCopy("__DATA_DIR__/blog/src/feed/pretty-atom-feed.xsl");
+  eleventyConfig.addPassthroughCopy('__DATA_DIR__/blog/src/css/style.css');
+  eleventyConfig.addWatchTarget('__DATA_DIR__/blog/src/css/style.css');
+  eleventyConfig.addPassthroughCopy('__DATA_DIR__/blog/src/assets');
 
 	// Run Eleventy when these files change:
 	// https://www.11ty.dev/docs/watch-serve/#add-your-own-watch-targets
 
 	// Watch images for the image pipeline.
-	eleventyConfig.addWatchTarget("__DATA_DIR__/src/**/*.{svg,webp,png,jpg,jpeg,gif}");
+	eleventyConfig.addWatchTarget("__DATA_DIR__/blog/src/**/*.{svg,webp,png,jpg,jpeg,gif}");
 
 	// Per-page bundles, see https://github.com/11ty/eleventy-plugin-bundle
 	// Adds the {% css %} paired shortcode
@@ -130,7 +130,7 @@ export const config = {
 	htmlTemplateEngine: "njk",
 
   dir: {
-    input: '__DATA_DIR__/src',      // default: "."
+    input: '__DATA_DIR__/blog/src',      // default: "."
     includes: './_includes',        // default: "_includes" (`input` relative)
     data: './_data',                // default: "_data" (`input` relative)
     output: '__DATA_DIR__/public',

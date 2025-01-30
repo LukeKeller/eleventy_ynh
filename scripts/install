@@ -35,7 +35,8 @@ ynh_script_progression "Adding $app's configuration..."
 
 ynh_config_add --template="eleventy.config.cjs" --destination="$install_dir/eleventy.config.cjs"
 
-mv "../sources/src" "$data_dir/src"
+# Removing this so I can use my own, separate git repo here as the source for the site
+# mv "../sources/src" "$data_dir/src"
 
 #=================================================
 # INSTALL ELEVENTY
