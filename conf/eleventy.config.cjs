@@ -6,7 +6,7 @@ const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const eleventyImageTransformPlugin = require("@11ty/eleventy-img");
 
-import pluginFilters from "'__DATA_DIR__/blog/src/_config/filters.js";
+const pluginFilters = require("'__DATA_DIR__/blog/src/_config/filters.js");
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function(eleventyConfig) {
