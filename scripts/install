@@ -46,6 +46,7 @@ ynh_script_progression "Installing $app..."
 pushd $install_dir
 	ynh_hide_warnings ynh_exec_as_app npm init -y
 	ynh_hide_warnings ynh_exec_as_app npm install @11ty/eleventy @11ty/eleventy-plugin-rss @11ty/eleventy-plugin-syntaxhighlight @11ty/eleventy-navigation @11ty/eleventy-img luxon --save-dev
+	ynh_hide_warnings ynh_exec_as_app npm pkg set type="module"
 popd
 
 #=================================================
